@@ -1,4 +1,5 @@
-<?php
+<?php 
+	require('config/config.php');
     require('config/db.php');
 
 	$query = "SELECT * FROM books";
@@ -15,25 +16,20 @@
 ?>
 
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.css" type="text/css">
-		<title>PHP Books</title>
-	</head>
-		<body>
-		  <div class="container">
-			<h1>Books</h1>
+	<?php include('inc/header.php'); ?>
+
+	 	<div class="container">
+		  <h1>Books</h1>
 			<?php foreach ($books as $book) : ?>
 				<div class="well">
 				  	<h3><?php echo $book['title']; ?></h3>
-				  		<p>This book was written by <?php echo $book['author']; ?> ,published by
+				  	<p>This book was written by <?php echo $book['author']; ?> ,published by
 				  		   <?php echo $book['publisher']; ?>
  							on	<?php echo$book['year_published']; ?>
-				  		</p>
+				  	</p>
+				  	<a class="btn btn-default" href="<?php echo ROOT_URL; ?>book.php">See More</a>
 
 				</div>
 			<?php endforeach; ?>
-          </div>		  
-		</body>
-</html>
+        </div>
+	<?php include('inc/footer.php'); ?>
