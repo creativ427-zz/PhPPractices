@@ -13,5 +13,5 @@ To use this template, your computer needs:
 ### Running the app
 
 ```bash
-python main.py
+phpmyadmin localhost
 ```
